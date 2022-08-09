@@ -4,7 +4,7 @@ import subprocess
 from pyodm import Node, exceptions
 
 
-subprocess.run(['gsutil', '-m', 'cp', '-r', f'gs://drone-images/example', './data/example'])
+subprocess.run(['gsutil', '-m', 'cp', '-r', f'gs://drone-images/example/', './data'])
 
 node = Node("localhost", 3000)
 
@@ -40,9 +40,9 @@ try:
         print("Task completed, downloading results...")
 
         # Retrieve results
-        task.download_assets("./my_results")
+        task.download_assets("./results")
 
-        print("Assets saved in ./my_results (%s)" % os.listdir("./my_results"))
+        print("Assets saved in ./results (%s)" % os.listdir("./results"))
 
         # Restart task and this time compute dtm
         # task.restart({'dtm': True})
