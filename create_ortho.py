@@ -44,6 +44,8 @@ try:
 
         print("Assets saved in ./results (%s)" % os.listdir("./results"))
 
+        subprocess.run(['gsutil', '-m', 'cp', '-r', './result/' f'gs://drone-images/example'])
+
         # Restart task and this time compute dtm
         # task.restart({'dtm': True})
         # task.wait_for_completion()
