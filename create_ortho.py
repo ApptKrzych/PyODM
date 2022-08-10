@@ -3,6 +3,8 @@ import time
 import subprocess
 from pyodm import Node, exceptions
 
+import sys
+sys.path.append('..')
 
 # subprocess.run(['gsutil', '-m', 'cp', '-r', f'gs://drone-images/example', './data'])
 
