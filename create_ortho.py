@@ -15,7 +15,7 @@ node = Node("localhost", 3000)
 # images = os.listdir('data/small_test')
 # images = [os.path.join('data/small_test', im) for im in images]
 images = os.listdir('data/example')
-images = [os.path.join('data/example', im) for im in images][:4]
+images = [os.path.join('data/example', im) for im in images]
 print(images)
 
 try:
@@ -23,7 +23,7 @@ try:
     print("Uploading images...")
     task = node.create_task(images, {
         'dsm': True, 
-        'orthophoto-resolution': 0.1,
+        'orthophoto-resolution': 0.2,
         'dem-resolution': 2.,
         'feature-quality': 'high',
         'pc-quality': 'high',
@@ -49,14 +49,14 @@ try:
         # subprocess.run(['gsutil', '-m', 'cp', '-r', './result/' f'gs://drone-images/example'])
 
         # Restart task and this time compute dtm
-        # task.restart({'dtm': True})
-        # task.wait_for_completion()
+        task.restart({'dtm': True})
+        task.wait_for_completion()
 
-        # print("Task completed, downloading results...")
+        print("Task completed, downloading results...")
 
-        # task.download_assets("./my_results_with_dtm")
+        task.download_assets("./results_with_dtm")
 
-        # print("Assets saved in ./my_results_with_dtm (%s)" % os.listdir("./my_results_with_dtm"))
+        print("Assets saved in ./results_with_dtm (%s)" % os.listdir("./results_with_dtm"))
     except exceptions.TaskFailedError as e:
         print("\n".join(task.output()))
 
