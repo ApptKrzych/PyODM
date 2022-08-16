@@ -27,7 +27,8 @@ try:
         'dem-resolution': 2.,
         'feature-quality': 'high',
         'pc-quality': 'high',
-        'orthophoto-kmz': True
+        'orthophoto-kmz': True,
+        'geo': 'geo.txt',
         })
     print(task.info())
 
