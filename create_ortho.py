@@ -28,7 +28,7 @@ try:
         'feature-quality': 'high',
         'pc-quality': 'high',
         'orthophoto-kmz': True,
-        'geo': 'geo.txt',
+        'geo': 'data/example/geo.txt',
         })
     print(task.info())
 
