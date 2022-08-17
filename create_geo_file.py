@@ -11,14 +11,16 @@ with open(input_path, 'r') as f:
 
 longitudes = []
 latitudes = []
+alts = []
 for d in data[1:]:
     d = d.split(',')
     longitudes.append(float(d[5]))
     latitudes.append(float(d[4]))
+    alts.append(float(d[6]))
     
 longitudes = tuple(longitudes)
 latitudes = tuple(latitudes)
-new_data = tuple(zip(images, longitudes, latitudes))
+new_data = tuple(zip(images, longitudes, latitudes, alts))
 
 with open('geo.txt', 'w', encoding='UTF-8') as f:
     f.write('EPSG:4326')
