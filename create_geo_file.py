@@ -26,5 +26,5 @@ with open('geo.txt', 'w', encoding='UTF-8') as f:
     for d in new_data:
         for i in d:
             f.write(str(i))
-            f.write('   ')
+            f.write(' ')
         f.write('\n')
