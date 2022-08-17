@@ -20,6 +20,7 @@ for d in data[1:]:
     
 longitudes = tuple(longitudes)
 latitudes = tuple(latitudes)
+alts = tuple(alts)
 new_data = tuple(zip(images, longitudes, latitudes, alts))
 
 with open('geo.txt', 'w', encoding='UTF-8') as f:
