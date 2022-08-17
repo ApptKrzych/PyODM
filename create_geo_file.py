@@ -4,7 +4,7 @@ import os
 # images = sorted(os.listdir('data/2018-11-14_avdelning_Ribbfors_1-3'))
 input_path = 'data/example/2018-11-13 10-02-50-CAM.log'
 images = sorted(os.listdir('data/example'))
-# images = [os.path.join('data/example', im) for im in images if im.endswith('.JPG')]
+images = [im for im in images if im.endswith('.JPG')]
 
 with open(input_path, 'r') as f:
     data = f.readlines()
