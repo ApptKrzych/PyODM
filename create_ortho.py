@@ -23,12 +23,12 @@ try:
     print("Uploading images...")
     task = node.create_task(images, {
         'dsm': True, 
-        'orthophoto-resolution': 0.2,
+        'orthophoto-resolution': 1.6,
         'dem-resolution': 2.,
         'feature-quality': 'high',
         'pc-quality': 'high',
         'orthophoto-kmz': True,
-        'geo': 'data/example/geo.txt',
+        # 'geo': 'data/example/geo.txt',
         })
     print(task.info())
 
