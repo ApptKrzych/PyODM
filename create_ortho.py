@@ -50,14 +50,14 @@ try:
         # subprocess.run(['gsutil', '-m', 'cp', '-r', './result/' f'gs://drone-images/example'])
 
         # Restart task and this time compute dtm
-        task.restart({'dtm': True})
-        task.wait_for_completion()
+        # task.restart({'dtm': True})
+        # task.wait_for_completion()
 
-        print("Task completed, downloading results...")
+        # print("Task completed, downloading results...")
 
-        task.download_assets("./results_with_dtm")
+        # task.download_assets("./results_with_dtm")
 
-        print("Assets saved in ./results_with_dtm (%s)" % os.listdir("./results_with_dtm"))
+        # print("Assets saved in ./results_with_dtm (%s)" % os.listdir("./results_with_dtm"))
     except exceptions.TaskFailedError as e:
         print("\n".join(task.output()))
 
