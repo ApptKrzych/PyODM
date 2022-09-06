@@ -23,7 +23,7 @@ try:
     print("Uploading images...")
     task = node.create_task(images, {
         'dsm': True, 
-        'orthophoto-resolution': 1,
+        'orthophoto-resolution': 1.6,
         'dem-resolution': 2.,
         'feature-quality': 'high',
         'pc-quality': 'high',
